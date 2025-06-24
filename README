@@ -1,0 +1,11 @@
+# Clickjacking Demo Tool
+
+This is a simple HTML-based demonstration of a Clickjacking attack.
+
+It loads a target website inside an iframe and overlays a transparent button at a chosen position, simulating a malicious user interaction. The goal is to illustrate how an attacker could deceive users into performing unintended actions on a vulnerable website.
+
+**Usage:** For educational and research purposes only. Do not use against any system without explicit permission.
+
+Author: Johto Robbie  
+Website: https://vnhackernews.com/  
+License: MIT License (see LICENSE file)
